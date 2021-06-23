@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  logstash:
+    container_name: logstash
+    build: 
+      context: logstash/
+    environment:
+      XPACK_MONITORING_ENABLED: "false"
+    restart: always
+    volumes:
+      - /home/ec2-user/elasticsearch/config/:/usr/share/logstash/pipeline/:ro
+      - /data/bitcoind/db.log:/usr/share/logstash/input/db.log:ro
+      - /data/bitcoind/debug.log:/usr/share/logstash/input/debug.log:ro

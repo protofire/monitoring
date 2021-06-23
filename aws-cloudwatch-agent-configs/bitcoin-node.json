@@ -1,0 +1,33 @@
+{
+    "agent": {
+      "metrics_collection_interval": 10,
+      "metrics_aggregation_interval": 60,
+      "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+    },
+    "metrics": {
+      "namespace": "BTC/CWAgent",
+      "metrics_collected": {
+        "disk": {
+          "resources": [
+            "/",
+            "/data"
+          ],
+          "measurement": [
+            "used_percent",
+            "free"
+          ],
+          "drop_device": false
+        },
+        "mem": {
+          "measurement": [
+            "used_percent"
+          ]
+        }
+      },
+      "append_dimensions": {
+        "InstanceId": "${aws:InstanceId}"
+      },
+      "aggregation_dimensions": [["InstanceId"]],
+      "force_flush_interval": 300
+    }
+}

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  logstash:
+    container_name: logstash
+    image: 410145537316.dkr.ecr.us-east-2.amazonaws.com/logstash_lite:latest 
+    environment:
+      XPACK_MONITORING_ENABLED: "false"
+    restart: always
+    volumes:
+      - /home/ec2-user/elasticsearch/config/:/usr/share/logstash/pipeline/:ro
+      - /var/log/:/usr/share/logstash/input/:ro

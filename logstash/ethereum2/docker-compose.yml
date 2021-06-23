@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  logstash:
+    container_name: logstash
+    build: 
+      context: logstash/
+    environment:
+      XPACK_MONITORING_ENABLED: "false"
+    restart: always
+    volumes:
+      - /home/ubuntu/elasticsearch/config/:/usr/share/logstash/pipeline/:ro
+      - /var/log/:/usr/share/logstash/input/:ro
