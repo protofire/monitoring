@@ -1,4 +1,25 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.5.7"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -15,24 +36,49 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 13,
+  "id": null,
   "links": [],
   "panels": [
     {
-      "collapsed": false,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 0
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                90
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "xdai validator CPU Utilization alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "CrT6otXMz"
+          }
+        ]
       },
-      "id": 18,
-      "panels": [],
-      "title": "Validator",
-      "type": "row"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -50,7 +96,7 @@
         "h": 7,
         "w": 6,
         "x": 0,
-        "y": 1
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 4,
@@ -80,7 +126,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "CPU Utilization",
           "groupBy": [
             {
               "params": [
@@ -124,16 +169,25 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             }
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 90,
+          "visible": true
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "secret-network validator CPU Utilization",
+      "title": "xdai validator CPU Utilization",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -173,6 +227,45 @@
       }
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                90
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "xdai validator memory utilization alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "CrT6otXMz"
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -190,7 +283,7 @@
         "h": 7,
         "w": 6,
         "x": 6,
-        "y": 1
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 6,
@@ -220,7 +313,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "RAM Utilization",
           "groupBy": [
             {
               "params": [
@@ -258,16 +350,25 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             }
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 90,
+          "visible": true
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "secret-network validator Memory Utilization",
+      "title": "xdai validator Memory Utilization",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -307,6 +408,45 @@
       }
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                2000000000
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "xdai validator free disk space alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "CrT6otXMz"
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -324,7 +464,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 1
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 8,
@@ -394,7 +534,7 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             },
             {
               "condition": "AND",
@@ -405,11 +545,20 @@
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": 2000000000,
+          "visible": true
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "secret-network validator Free Disk Space",
+      "title": "xdai validator Free Disk Space",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -449,12 +598,51 @@
       }
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                0
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "xdai validator parity container status alert",
+        "noDataState": "alerting",
+        "notifications": [
+          {
+            "uid": "CrT6otXMz"
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "description": "0 - Active",
+      "description": "0 - up to date\n\nno data - syncing",
       "fieldConfig": {
         "defaults": {},
         "overrides": []
@@ -465,7 +653,7 @@
         "h": 7,
         "w": 6,
         "x": 0,
-        "y": 8
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 10,
@@ -495,7 +683,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "service_status_code",
           "groupBy": [
             {
               "params": [
@@ -510,7 +697,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "systemd_units",
+          "measurement": "exec",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -519,7 +706,7 @@
             [
               {
                 "params": [
-                  "active_code"
+                  "fixed_result"
                 ],
                 "type": "field"
               },
@@ -531,18 +718,33 @@
           ],
           "tags": [
             {
+              "key": "api_method",
+              "operator": "=",
+              "value": "eth_syncing"
+            },
+            {
+              "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             }
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 0,
+          "visible": true
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "secret-network validator service status",
+      "title": "xdai validator - PARITY container is listening on :8545",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -605,7 +807,7 @@
         "h": 7,
         "w": 6,
         "x": 6,
-        "y": 8
+        "y": 7
       },
       "id": 14,
       "options": {
@@ -640,7 +842,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "http",
+          "measurement": "exec",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -649,7 +851,7 @@
             [
               {
                 "params": [
-                  "latest_block_height"
+                  "fixed_result"
                 ],
                 "type": "field"
               },
@@ -661,17 +863,59 @@
           ],
           "tags": [
             {
+              "key": "api_method",
+              "operator": "=",
+              "value": "eth_blocknumber"
+            },
+            {
+              "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             }
           ]
         }
       ],
-      "title": "secret-network validator Highest Block Number",
+      "title": "xdai validator Highest Block Number",
       "type": "stat"
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                1
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "10m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "avg"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "No new blocks has been imported in the last 10 minutes",
+        "name": "xdai validator New Blocks' rate alert",
+        "noDataState": "no_data",
+        "notifications": []
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -687,7 +931,7 @@
         "h": 7,
         "w": 6,
         "x": 12,
-        "y": 8
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 12,
@@ -717,9 +961,9 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "blocks per minute",
+          "alias": "blocks pere minute",
           "groupBy": [],
-          "measurement": "http",
+          "measurement": "exec",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -728,7 +972,7 @@
             [
               {
                 "params": [
-                  "latest_block_height"
+                  "fixed_result"
                 ],
                 "type": "field"
               },
@@ -742,18 +986,33 @@
           ],
           "tags": [
             {
+              "key": "api_method",
+              "operator": "=",
+              "value": "eth_blocknumber"
+            },
+            {
+              "condition": "AND",
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             }
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": 1,
+          "visible": true
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "secret-network validator Highest Block Number growth",
+      "title": "xdai validator Highest Block Number growth",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -793,12 +1052,50 @@
       }
     },
     {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                13
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "min"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "name": "xdai validator Containers Running alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "CrT6otXMz"
+          }
+        ]
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "description": "",
       "fieldConfig": {
         "defaults": {},
         "overrides": []
@@ -809,19 +1106,18 @@
         "h": 7,
         "w": 6,
         "x": 18,
-        "y": 8
+        "y": 7
       },
       "hiddenSeries": false,
       "id": 16,
       "legend": {
         "avg": false,
-        "current": true,
+        "current": false,
         "max": false,
         "min": false,
-        "rightSide": true,
-        "show": true,
+        "show": false,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
@@ -840,7 +1136,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "Active",
           "groupBy": [
             {
               "params": [
@@ -855,7 +1150,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "http",
+          "measurement": "docker",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -864,13 +1159,13 @@
             [
               {
                 "params": [
-                  "status"
+                  "n_containers_running"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "min"
               }
             ]
           ],
@@ -878,60 +1173,25 @@
             {
               "key": "host",
               "operator": "=",
-              "value": "secret-validator"
-            }
-          ]
-        },
-        {
-          "alias": "Jailed",
-          "groupBy": [
-            {
-              "params": [
-                "5m"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "hide": false,
-          "measurement": "http",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "jailed"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "host",
-              "operator": "=",
-              "value": "secret-validator"
+              "value": "xdai-validator"
             }
           ]
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": 13,
+          "visible": true
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "secret-network validator State at api.secretapi.io",
+      "title": "xdai validator Containers Running Count",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -947,16 +1207,292 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1696",
+          "$$hashKey": "object:2362",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2363",
           "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
           "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "xDAI"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 14
+      },
+      "id": 18,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.7",
+      "targets": [
+        {
+          "alias": "xDAI",
+          "groupBy": [],
+          "measurement": "exec",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "fixed_result"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  " / 1000000000000000000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "xdai-validator"
+            },
+            {
+              "condition": "AND",
+              "key": "api_method",
+              "operator": "=",
+              "value": "eth_getbalance"
+            },
+            {
+              "condition": "AND",
+              "key": "address",
+              "operator": "=",
+              "value": "bridge"
+            }
+          ]
+        }
+      ],
+      "title": "xDAI Bridge Balance",
+      "type": "stat"
+    },
+    {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                20000
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "max"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "alerting",
+        "for": "5m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "It's time to withdraw xDAI",
+        "name": "xDAI Bridge Balance alert",
+        "noDataState": "no_data",
+        "notifications": [
+          {
+            "uid": "CrT6otXMz"
+          }
+        ]
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 6,
+        "y": 14
+      },
+      "hiddenSeries": false,
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.7",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "xDAI Bridge Balance",
+          "groupBy": [],
+          "measurement": "exec",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "fixed_result"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [
+                  " / 1000000000000000000"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "host",
+              "operator": "=",
+              "value": "xdai-validator"
+            },
+            {
+              "condition": "AND",
+              "key": "api_method",
+              "operator": "=",
+              "value": "eth_getbalance"
+            },
+            {
+              "condition": "AND",
+              "key": "address",
+              "operator": "=",
+              "value": "bridge"
+            }
+          ]
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 20000,
+          "visible": true
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "xDAI Bridge Balance",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:231",
+          "format": "xDAI",
+          "label": "",
+          "logBase": 1,
+          "max": "21000",
+          "min": "0",
+          "show": true
         },
         {
-          "$$hashKey": "object:1697",
+          "$$hashKey": "object:232",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -974,7 +1510,9 @@
   "refresh": "5m",
   "schemaVersion": 27,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "project"
+  ],
   "templating": {
     "list": []
   },
@@ -984,7 +1522,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Secret-Network Project Copy",
-  "uid": "3J4D_qRnz",
-  "version": 2
+  "title": "xDAI Project",
+  "uid": "xdai",
+  "version": 9
 }
