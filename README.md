@@ -2,7 +2,6 @@
 
 - [Link to the article]()
 - [Wiki](https://github.com/protofire/monitoring/wiki)
-- [License](https://github.com/protofire/monitoring/blob/main/LICENSE)
 
 This repository contains configuration templates for all the tools described in our [article]() **"Protofire Releases Monitoring Templates for Multi-Cloud Blockchains"**
 
@@ -19,3 +18,12 @@ Directories description:
 | telegraf | Basic and additional telegraf agent configuration files to gather metrics from different blockchain nodes and relayers |
 
  Feel free to use our templates, provide your feedback by opening issues, and submitting your pull requests to our repositories!
+
+# License
+
+[GPLv3](https://github.com/protofire/monitoring/blob/main/LICENSE)
+
+# Authors
+
+- [Arsenii Petrovich](https://github.com/ArseniiPetrovich)
+- [Dzmmitry Kliapkou](https://github.com/dzmitrykliapkou)
