@@ -17,7 +17,7 @@ Directories description:
 | logstash | Everything you need to gather logs from different blockchain nodes with Logstash run as a docker container |
 | telegraf | Basic and additional telegraf agent configuration files to gather metrics from different blockchain nodes and relayers |
 
- Feel free to use our templates, provide your feedback by opening issues, and submitting your pull requests to our repositories!
+We are looking forward to your feedback. Feel free to [open](https://github.com/protofire/monitoring/issues) issues and submit pull requests to this repository
 
 # License
 
