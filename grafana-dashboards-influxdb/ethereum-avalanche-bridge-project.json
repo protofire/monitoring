@@ -91,7 +91,7 @@
         "for": "5m",
         "frequency": "1m",
         "handler": 1,
-        "message": "Казна пустеет, милорд",
+        "message": "",
         "name": "ETH Relayer balance alert",
         "noDataState": "no_data",
         "notifications": [
@@ -290,7 +290,7 @@
         "for": "5m",
         "frequency": "1m",
         "handler": 1,
-        "message": "Казна пустеет, милорд",
+        "message": "",
         "name": "AVAX Relayer balance alert",
         "noDataState": "no_data",
         "notifications": [
