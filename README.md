@@ -1,7 +1,8 @@
 # Monitoring Templates for Multi-Cloud Blockchains
 
 - [Link to the article]()
-- [How to implement](https://github.com/protofire/monitoring/wiki)
+- [Wiki](https://github.com/protofire/monitoring/wiki)
+- [License](https://github.com/protofire/monitoring/blob/main/LICENSE)
 
 This repository contains configuration templates for all the tools described in our [article]() **"Protofire Releases Monitoring Templates for Multi-Cloud Blockchains"**
 
