@@ -970,7 +970,7 @@
         {
           "alias": "",
           "dimensions": {
-            "DBInstanceIdentifier": "eth1p-armanino-eth"
+            "DBInstanceIdentifier": "SOME_DB_INSTANCE_IDENTIFIER"
           },
           "expression": "",
           "id": "",
@@ -1075,7 +1075,7 @@
         {
           "alias": "",
           "dimensions": {
-            "DBInstanceIdentifier": "eth1p-armanino-eth"
+            "DBInstanceIdentifier": "SOME_DB_INSTANCE_IDENTIFIER"
           },
           "expression": "",
           "id": "",
@@ -1184,7 +1184,7 @@
         {
           "alias": "",
           "dimensions": {
-            "DBInstanceIdentifier": "eth1p-armanino-eth"
+            "DBInstanceIdentifier": "SOME_DB_INSTANCE_IDENTIFIER"
           },
           "expression": "",
           "id": "",
@@ -1289,7 +1289,7 @@
         {
           "alias": "",
           "dimensions": {
-            "DBInstanceIdentifier": "eth1p-armanino-eth"
+            "DBInstanceIdentifier": "SOME_DB_INSTANCE_IDENTIFIER"
           },
           "expression": "",
           "id": "",
@@ -1394,7 +1394,7 @@
         {
           "alias": "",
           "dimensions": {
-            "DBInstanceIdentifier": "eth1p-armanino-eth"
+            "DBInstanceIdentifier": "SOME_DB_INSTANCE_IDENTIFIER"
           },
           "expression": "",
           "id": "",
