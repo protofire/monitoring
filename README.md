@@ -26,4 +26,4 @@ We are looking forward to your feedback. Feel free to [open](https://github.com/
 # Authors
 
 - [Arsenii Petrovich](https://github.com/ArseniiPetrovich)
-- [Dzmmitry Kliapkou](https://github.com/dzmitrykliapkou)
+- [Dzmitry Kliapkou](https://github.com/dzmitrykliapkou)
