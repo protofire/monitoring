@@ -1,11 +1,11 @@
 # Monitoring Templates for Multi-Cloud Blockchains
 
-- [Link to the article]()
+- [Link to the article](https://medium.com/protofire-blog/protofire-releases-monitoring-templates-for-multicloud-blockchains-740b2b19127f)
 - [Wiki](https://github.com/protofire/monitoring/wiki)
 
-This repository contains configuration templates for all the tools described in our [article]() **"Protofire Releases Monitoring Templates for Multi-Cloud Blockchains"**
+This repository contains configuration templates for all the tools described in our article [**"Protofire Releases Monitoring Templates for Multi-Cloud Blockchains"**](https://medium.com/protofire-blog/protofire-releases-monitoring-templates-for-multicloud-blockchains-740b2b19127f)
 
-Some additional instructions can be found in the Wiki section of this repository
+Setup instructions can be found in the [Wiki](https://github.com/protofire/monitoring/wiki) section of this repository
 
 Directories description:
 
@@ -17,7 +17,7 @@ Directories description:
 | logstash | Everything you need to gather logs from different blockchain nodes with Logstash run as a docker container |
 | telegraf | Basic and additional telegraf agent configuration files to gather metrics from different blockchain nodes and relayers |
 
-We are looking forward to your feedback. Feel free to [open](https://github.com/protofire/monitoring/issues) issues and submit pull requests to this repository
+We are looking forward to your feedback. Feel free to open [issues](https://github.com/protofire/monitoring/issues) and submit [pull requests](https://github.com/protofire/monitoring/pulls) to this repository
 
 # License
 
